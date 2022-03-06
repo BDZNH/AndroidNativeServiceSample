@@ -1,0 +1,100 @@
+cc_defaults{
+    name: "nativeservicesample_defaults",
+    shared_libs: [
+        "libutils",
+        "libcutils",
+        "libbinder",
+        "libhardware",
+        "liblog"
+    ],
+
+    include_dirs: [
+        "frameworks/native/include",
+        "system/core/include",
+        "system/libhwbinder/include"
+    ],
+    cflags: [
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-Wno-ignored-qualifiers",
+        "-Wno-unused-parameter",
+    ],
+}
+
+cc_binary{
+    name: "server",
+    defaults: [
+        "nativeservicesample_defaults",
+    ],
+    srcs: [
+        "server.cpp",
+        "NativeServiceSampleService.cpp",
+    ],
+}
+
+cc_library{
+    name: "libnativeservicesampleclient",
+    srcs: [
+        "NativeServiceSampleClient.cpp",
+    ],
+    defaults: [
+        "nativeservicesample_defaults",
+    ],
+}
+
+cc_library{
+    name: "libnativeservicesample",
+    srcs: [
+        "NativeServiceSampleClient.cpp",
+    ],
+    shared_libs: [
+        "libbinder",
+        "liblog",
+        "libutils",
+    ],
+    cflags: [
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-Wno-ignored-qualifiers",
+        "-Wno-unused-parameter",
+    ],
+}
+
+cc_library{
+    name: "libnativeservicesamplejni",
+    srcs: [
+        "NativeServiceLibrary.cpp",
+    ],
+    shared_libs: [
+        "liblog",
+        "libbinder",
+        "libandroid_runtime",
+        "libnativeservicesample",
+    ],
+    cflags: [
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-Wno-ignored-qualifiers",
+        "-Wno-unused-parameter",
+    ],
+}
+
+cc_binary{
+    name: "client",
+    defaults: [
+        "nativeservicesample_defaults",
+    ],
+    cflags: [
+        "-fexceptions",
+    ],
+    static_libs: [
+        "libnativeservicesampleclient",
+    ],
+    rtti: true,
+    srcs: [
+        "client.cpp",
+    ],
+}
