@@ -1,0 +1,2 @@
+vendor.example.samplehidl::ISampleHidl u:object_r:hal_samplehidl_hwservice:s0
+

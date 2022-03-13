@@ -1,0 +1,7 @@
+attribute hal_samplehidl;
+expandattribute hal_samplehidl true;
+attribute hal_samplehidl_client;
+expandattribute hal_samplehidl_client true;
+attribute hal_samplehidl_server;
+expandattribute hal_samplehidl_server false;
+

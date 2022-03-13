@@ -1,0 +1,7 @@
+(typeattributeset hal_samplehidl (hal_samplehidl_default))
+(typeattributeset hal_samplehidl_server (hal_samplehidl_default))
+(allow hal_samplehidl_default hwservicemanager (binder (call transfer)))
+(allow hwservicemanager hal_samplehidl_default (binder (call transfer)))
+(allow hwservicemanager hal_samplehidl_default (dir (search)))
+(allow hwservicemanager hal_samplehidl_default (file (read open)))
+(allow hwservicemanager hal_samplehidl_default (process (getattr)))

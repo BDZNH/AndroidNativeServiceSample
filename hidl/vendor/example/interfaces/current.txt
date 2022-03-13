@@ -1,0 +1,1 @@
+601e49b484654e1cc881edecac1ebaff0e6a234ab1bef0b7c4f9ba42d4cf8982 vendor.example.samplehidl@1.0::ISampleHidl

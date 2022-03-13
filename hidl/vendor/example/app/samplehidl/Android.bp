@@ -1,0 +1,18 @@
+android_app {
+    name: "SampleHidl",
+    srcs:["java/**/*/*.java",],
+    // platform_apis: true,
+    product_specific: true,
+    certificate: "platform",
+    manifest: "AndroidManifest.xml",
+    resource_dirs:["res",],
+    static_libs: [
+        "androidx.appcompat_appcompat",
+        "com.google.android.material_material",
+        "androidx-constraintlayout_constraintlayout",
+        "vendor.example.samplehidl-V1.0-java",
+    ],
+    optimize: {
+        enabled: false,
+    }
+}

@@ -1,0 +1,5 @@
+#binder_call(hal_samplehidl_client, hal_samplehidl_server)
+#binder_call(hal_samplehidl_server, hal_samplehidl_client)
+
+add_hwservice(hal_samplehidl_server, hal_samplehidl_hwservice)
+allow hal_samplehidl_client hal_samplehidl_hwservice:hwservice_manager find;
