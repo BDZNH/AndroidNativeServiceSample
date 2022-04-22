@@ -26,6 +26,7 @@ cc_binary {
         "libhidlbase",
         "libhidltransport",
         "libutils",
+        "liblog",
         "vendor.example.samplehidl@1.0",
     ],
 }
@@ -35,11 +36,13 @@ cc_binary {
     vendor: true,
     srcs: [
         "client.cpp",
+        "SampleHidlCallBack.cpp",
     ],
     shared_libs: [
         "libhidlbase",
         "libhidltransport",
         "libutils",
+        "liblog",
         "vendor.example.samplehidl@1.0",
     ],
 }

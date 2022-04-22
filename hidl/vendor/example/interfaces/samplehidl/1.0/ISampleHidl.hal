@@ -1,6 +1,10 @@
 package vendor.example.samplehidl@1.0;
 
+import ISampleHidlCallBack;
+
 interface ISampleHidl{
     hello(string str) generates (string result);
     call(vec<uint8_t> data) generates (vec<uint8_t> result);
+    registerRemoteCallBack(ISampleHidlCallBack cb);
+    unregisterRemoteCallBack(ISampleHidlCallBack cb);
 };

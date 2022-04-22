@@ -1,1 +1,1 @@
-601e49b484654e1cc881edecac1ebaff0e6a234ab1bef0b7c4f9ba42d4cf8982 vendor.example.samplehidl@1.0::ISampleHidl
+8b06fc5b5a666ef853cea03ffa191c006f769e264dd5e73ad883384b944d2c45 vendor.example.samplehidl@1.0::ISampleHidl

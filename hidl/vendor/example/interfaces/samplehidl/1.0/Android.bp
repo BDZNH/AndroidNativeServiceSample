@@ -11,6 +11,7 @@ hidl_interface {
     product_specific: true,
     srcs: [
         "ISampleHidl.hal",
+        "ISampleHidlCallBack.hal",
     ],
     interfaces: [
         "android.hidl.base@1.0",

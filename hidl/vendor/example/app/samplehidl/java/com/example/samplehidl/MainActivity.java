@@ -6,21 +6,28 @@ import android.os.Bundle;
 import android.os.RemoteException;
 import vendor.example.samplehidl.V1_0.ISampleHidl;
 
-public class MainActivity extends AppCompatActivity {
+import com.jni.JavaHello;
 
+import android.view.View;
+
+public class MainActivity extends AppCompatActivity {
+    JavaHello iii;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-	try{
-	ISampleHidl server = ISampleHidl.getService();
-	if(server != null){
-	    System.out.println("get service success");
-	    String result = server.hello("msg from android app");
-	    System.out.println("received service msg: " + result);
-	}
-	} catch (RemoteException e){
-	    e.printStackTrace();
-	}
+        iii = JavaHello.getInstance();
+    }
+
+    public void onClick(View view) {
+        System.out.println(iii.hello());
+    }
+
+    public void registerCallback(View view) {
+        iii.registerRemoteCallBack();
+    }
+
+    public void unregisterCallback(View view) {
+        iii.unregisterRemoteCallBack();
     }
 }

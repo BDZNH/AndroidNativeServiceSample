@@ -1,0 +1,6 @@
+package vendor.example.samplehidl@1.0;
+
+interface ISampleHidlCallBack{
+    getCookie() generates (uint64_t cookie);
+    oneway onReceive(int32_t firtst, int32_t second, int32_t third);
+};

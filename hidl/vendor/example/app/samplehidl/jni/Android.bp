@@ -1,0 +1,15 @@
+cc_library_shared{
+    name: "libsamplehidl_jni",
+    srcs: ["**/*.cpp"],
+    shared_libs: [
+        "liblog",
+        "libhidlbase",
+        "libhidltransport",
+        "libutils",
+        "vendor.example.samplehidl@1.0",
+    ],
+    cflags: [
+        "-Wno-unused-parameter",
+    ],
+    product_specific: true,
+}

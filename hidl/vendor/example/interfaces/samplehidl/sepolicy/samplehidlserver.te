@@ -1,0 +1,9 @@
+type samplehidlserver, domain;
+
+type samplehidlserver_exec, exec_type, vendor_file_type, file_type;
+hwbinder_use(samplehidlserver);
+init_daemon_domain(samplehidlserver)
+add_hwservice(samplehidlserver, samplehidlserver_hwservice)
+
+allow samplehidlserver hwservicemanager_prop:file {map read open getattr};
+allow samplehidlserver system_file:dir {read open getattr search};
